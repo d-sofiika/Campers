@@ -1,10 +1,12 @@
-import css from "./Catalog.module.scss"
+import Header from "../../components/Header/Header";
+import css from "./Catalog.module.css"
 
 const Catalog = () => {
   return (
-    <div className={css.container}>
-
-    </div>
+    <div className={css.section}>
+              <Header />
+              
+        </div>
   );
 };
 

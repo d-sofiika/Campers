@@ -1,9 +1,10 @@
-import css from "./Product.module.scss"
+import Header from "../../components/Header/Header";
+import css from "./Product.module.css";
 
 const Product = () => {
   return (
-    <div className={css.container}>
-
+    <div className={css.section}>
+      <Header />
     </div>
   );
 };

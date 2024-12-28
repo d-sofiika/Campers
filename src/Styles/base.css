@@ -1,0 +1,77 @@
+:root {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --main: #101828;
+  --text: #475467;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --gray: #6c717b;
+  --gray-light: #dadde1;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+margin: 0 auto;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 64px;
+}
+
+
