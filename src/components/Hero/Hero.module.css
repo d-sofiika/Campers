@@ -1,0 +1,38 @@
+.heroContainer{
+    background-image: url('../../img/camper-background-2x.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 92.2vh;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.wrapper{
+    color: var(--inputs);
+}
+.title{
+    margin-bottom: 16px;
+    font-weight: 600;
+        font-size: 48px;
+        line-height: 67%;
+}
+.descr{
+    margin-bottom: 40px;
+    font-weight: 600;
+        font-size: 24px;
+        line-height: 133%;
+}
+.button{
+    border-radius: 200px;
+        padding: 16px 48px;
+        width: 173px;
+        font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+        background: var(--button);
+    color: var(--inputs);
+}
+.button:hover, .button:focus{
+    background: var(--button-hover);
+}

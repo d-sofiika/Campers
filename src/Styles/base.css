@@ -33,6 +33,7 @@ margin: 0 auto;
   justify-content: center;
   font-family: "Inter", sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
