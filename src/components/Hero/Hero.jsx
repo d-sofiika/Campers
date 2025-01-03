@@ -5,7 +5,7 @@ export default function Hero() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/catalog"); // Переходить на сторінку '/catalog'
+    navigate("/catalog"); 
   };
 
   return (
