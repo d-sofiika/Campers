@@ -3,22 +3,30 @@ import css from "./Filters.module.css";
 
 export default function Filters({ onFilter }) {
   const [location, setLocation] = useState("");
-  const [type, setType] = useState("");
+  const [form, setForm] = useState("");
   const [features, setFeatures] = useState({
     ac: false,
     automatic: false,
     kitchen: false,
-    tv: false,
+    TV: false,
     bathroom: false,
   });
-
+  const [transmission, setTransmission] = useState("");
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const selectedFeatures = Object.keys(features).filter(
-      (key) => features[key]
-    );
-    onFilter({ location, type, features: selectedFeatures });
-    console.log("onFilter", onFilter);
+   const selectedFeatures = Object.keys(features).filter((key) => features[key]);
+
+    const filterData = {
+      location,
+        transmission,
+        form: form === "Fully Integrated" ? "fullyIntegrated" : form, 
+    };
+   selectedFeatures.forEach((feature) => {
+      filterData[feature] = true; // Встановлюємо для обраних характеристик true
+    });
+    onFilter(filterData);
+    console.log('filterData', filterData)
   };
 
   return (
@@ -53,9 +61,7 @@ export default function Filters({ onFilter }) {
           </div>
           <div
             className={features.automatic ? css.active : css.inactive}
-            onClick={() =>
-              setFeatures({ ...features, automatic: !features.automatic })
-            }
+            onChange={(e) => setTransmission(e.target.value)}
           >
             <svg className={css.img}>
               <use href="/src/img/sprite.svg#icon-diagram"></use>
@@ -102,8 +108,8 @@ export default function Filters({ onFilter }) {
           <h2 className={css.titleFilters}>Vehicle type</h2>
           <div className={css.vehicleTypes}>
             <div
-              className={type === "Van" ? css.active : css.inactive}
-              onClick={() => setType("Van")}
+              className={form === "Van" ? css.active : css.inactive}
+              onClick={() => setForm("Van")}
             >
               <svg className={css.img}>
                 <use href="/src/img/sprite.svg#icon-bi_grid-1x2" />
@@ -112,9 +118,9 @@ export default function Filters({ onFilter }) {
             </div>
             <div
               className={
-                type === "Fully Integrated" ? css.active : css.inactive
+                form === "Fully Integrated" ? css.active : css.inactive
               }
-              onClick={() => setType("Fully Integrated")}
+              onClick={() => setForm("Fully Integrated")}
             >
               <svg className={css.img}>
                 <use href="/src/img/sprite.svg#icon-bi_grid" />
@@ -122,8 +128,8 @@ export default function Filters({ onFilter }) {
               <p className={css.imgDescr}>Fully Integrated</p>
             </div>
             <div
-              className={type === "Alcove" ? css.active : css.inactive}
-              onClick={() => setType("Alcove")}
+              className={form === "Alcove" ? css.active : css.inactive}
+              onClick={() => setForm("Alcove")}
             >
               <svg className={css.img}>
                 <use href="/src/img/sprite.svg#icon-bi_grid-3x3" />
