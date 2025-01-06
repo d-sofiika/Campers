@@ -5,8 +5,7 @@ export default function Filters({ onFilter }) {
   const [location, setLocation] = useState("");
   const [form, setForm] = useState("");
   const [features, setFeatures] = useState({
-    ac: false,
-    automatic: false,
+  AC: false,
     kitchen: false,
     TV: false,
     bathroom: false,
@@ -23,13 +22,14 @@ export default function Filters({ onFilter }) {
         form: form === "Fully Integrated" ? "fullyIntegrated" : form, 
     };
    selectedFeatures.forEach((feature) => {
-      filterData[feature] = true; // Встановлюємо для обраних характеристик true
+      filterData[feature] = true; 
     });
     onFilter(filterData);
     console.log('filterData', filterData)
   };
 
   return (
+    
     <form onSubmit={handleSubmit} className={css.form}>
       
         <p className={css.textLocation}>Location</p>
@@ -51,8 +51,8 @@ export default function Filters({ onFilter }) {
         <h2 className={css.titleFilters}>Vehicle equipment</h2>
         <div className={css.wrapperCheckbox}>
           <div
-            className={features.ac ? css.active : css.inactive}
-            onClick={() => setFeatures({ ...features, ac: !features.ac })}
+            className={features.AC ? css.active : css.inactive}
+            onClick={() => setFeatures({ ...features, AC: !features.AC })}
           >
             <svg className={css.img}>
               <use href="/src/img/sprite.svg#icon-wind"></use>
@@ -60,8 +60,8 @@ export default function Filters({ onFilter }) {
             <p className={css.imgDescr}>AC</p>
           </div>
           <div
-            className={features.automatic ? css.active : css.inactive}
-            onChange={(e) => setTransmission(e.target.value)}
+              className={transmission === "automatic" ? css.active : css.inactive}
+  onClick={() => setTransmission("automatic")}
           >
             <svg className={css.img}>
               <use href="/src/img/sprite.svg#icon-diagram"></use>
@@ -82,8 +82,8 @@ export default function Filters({ onFilter }) {
           </div>
 
           <div
-            className={features.tv ? css.active : css.inactive}
-            onClick={() => setFeatures({ ...features, tv: !features.tv })}
+            className={features.TV ? css.active : css.inactive}
+            onClick={() => setFeatures({ ...features, TV: !features.TV })}
           >
             <svg className={css.img}>
               <use href="/src/img/sprite.svg#icon-tv"></use>
