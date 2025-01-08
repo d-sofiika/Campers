@@ -108,8 +108,8 @@ export default function Filters({ onFilter }) {
           <h2 className={css.titleFilters}>Vehicle type</h2>
           <div className={css.vehicleTypes}>
             <div
-              className={form === "Van" ? css.active : css.inactive}
-              onClick={() => setForm("Van")}
+              className={form === "panelTruck" ? css.active : css.inactive}
+              onClick={() => setForm("panelTruck")}
             >
               <svg className={css.img}>
                 <use href="/src/img/sprite.svg#icon-bi_grid-1x2" />

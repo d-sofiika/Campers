@@ -1,48 +1,36 @@
-import { useEffect, useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import Header from "../../components/Header/Header";
 import VehicleList from "../../components/VehicleList/VehicleList";
 import css from "./Catalog.module.css";
-import { fetchData } from "../../redux/campersApi";
+
+import { useCatalog } from "../../redux/hooks/useCatalog";
 
 const Catalog = () => {
-  const [result, setResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [filter, setFilter] = useState({});
-
-  
-    const fetchCampers = async (filter) => {
-    try {
-      setLoading(true);
-      setError(false);
-      
-      const data = await fetchData(filter);
-      setResult(data.items || []); 
-    } catch (error) {
-      console.error("Error fetching campers:", error);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
- 
-  useEffect(() => {
-    fetchCampers(filter);
-  }, [filter]);
-
+ const { result, loading, error, hasMore, loadMore, handleFilterChange } =
+    useCatalog();
 
   return (
     <div>
       <Header />
       <div className={`container ${css.catalogContainer}`}>
-        <Filters onFilter={setFilter}/>
-        {loading && <p>Loading data, please wait...</p>}
-        {error && (
-          <p>Whoops, something went wrong! Please try reloading this page!</p>
-        )}
-        {result.length > 0 && <VehicleList items={result} />}
+        <Filters onFilter={handleFilterChange} />
+        <div className={css.vehicleContainer }>
+          {loading && !result.length && <p>Loading data, please wait...</p>}
+          {error && (
+            <p>Whoops, something went wrong! Please try reloading this page!</p>
+          )}
+          {result.length > 0 && (
+            <VehicleList
+              items={result}
+              loadMore={loadMore}
+              hasMore={hasMore}
+              loading={loading}
+            />
+          )}
+          {!loading && !hasMore && result.length > 0 && (
+            <p>No more data to load</p>
+          )}
+        </div>
       </div>
     </div>
   );

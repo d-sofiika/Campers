@@ -1,4 +1,6 @@
-
+.vehicleListContainer{
+    min-width: 890px;
+}
 .list{
 max-width: 888px;
 display: flex;

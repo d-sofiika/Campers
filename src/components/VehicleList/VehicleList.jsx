@@ -1,12 +1,16 @@
+
 import VehicleItem from "../VehicleItem/VehicleItem";
+
 import css from "./VehicleList.module.css";
 
-export default function VehicleList({ items }) {
+
+export default function VehicleList({ items, loadMore, hasMore, loading }) {
+    
   return (
     <div className={css.vehicleListContainer}>
       <ul className={css.list}>
-        {items.map((detail) => (
-          <li key={detail.id} className={css.item}>
+        {items.map((detail, index) => (
+          <li key={`${detail.someField}-${index}`} className={css.item}>
             <img
               src={detail.gallery[0]?.thumb}
               alt="camper"
@@ -16,6 +20,12 @@ export default function VehicleList({ items }) {
           </li>
         ))}
       </ul>
+        {loading && <p>Loading...</p>} 
+      {!loading && hasMore && (
+        <button onClick={loadMore} className={css.loadMoreBtn}>
+          Load More
+        </button>
+      )}
     </div>
   );
 }
