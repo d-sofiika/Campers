@@ -1,33 +1,45 @@
-.vehicleListContainer{
-    min-width: 890px;
+.list {
+  max-width: 888px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
 }
-.list{
-max-width: 888px;
-display: flex;
-flex-direction: column;
-gap: 32px;
-}
-.item{
-border: 1px solid var(--gray-light);
-    border-radius: 20px;
-    padding: 24px;
-   display: flex;
-   gap: 24px;
+.item {
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
 }
 
-.img{
-border-radius: 10px;
-   width:  292px;
-    height: 320px;
-    object-fit: cover;
+.img {
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+  object-fit: cover;
 }
-.coverPrice{
-    position: relative;
-    left: 24px;
+.coverPrice {
+  position: relative;
+  left: 24px;
 }
-.price{
 
+.wrapperLoadMore {
+  display: flex;
+  justify-content: center;
 }
-.heartIcon{
+.loadMoreBtn {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--main);
+}
 
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+  border: 1px solid var(--button-hover);
 }

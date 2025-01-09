@@ -1,0 +1,6 @@
+.active {
+    fill: var(--button);
+}
+.inactive {
+    fill: var(--main)
+}

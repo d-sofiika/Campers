@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCampers, setFilter, setPage, setItems, setHasMore } from "../slices/paginationSlice"; // Імпортуємо екшени
+import { fetchCampers, setFilter, setPage, setItems, setHasMore } from "../slices/paginationSlice"; 
 import { useEffect } from "react";
 
 export const useCatalog = () => {

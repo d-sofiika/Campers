@@ -5,9 +5,10 @@ import Features from './Features/Features'
 import Reviews from './Reviews/Reviews'
 import { ColorRing } from 'react-loader-spinner'
 
+
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const Catalog= lazy(() => import("../pages/Catalog/Catalog.jsx"));
-const Product = lazy(() => import("../pages/Product/Product.jsx"));
+const Camper = lazy(() => import("../pages/Camper/Camper.jsx"));
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
     <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<Catalog />} />
-        <Route path="/catalog/:id" element={<Product />} >
+        <Route path="/catalog/:id" element={<Camper />} >
           <Route path="features" element={<Features />} />
           <Route path="reviews" element={<Reviews />} />
         </Route >

@@ -49,11 +49,17 @@ const paginationSlice = createSlice({
     builder
       .addCase(fetchCampers.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        if (
+          !state.items.some((item) =>
+            action.payload.some((newItem) => newItem.id === item.id)
+          )
+        ) {
+          state.items = [...state.items, ...action.payload];
+        }
         state.hasMore = action.payload.length === 5;
       })
       .addCase(fetchCampers.rejected, (state, action) => {

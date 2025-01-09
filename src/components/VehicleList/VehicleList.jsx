@@ -20,12 +20,15 @@ export default function VehicleList({ items, loadMore, hasMore, loading }) {
           </li>
         ))}
       </ul>
-        {loading && <p>Loading...</p>} 
+      <div className={css.wrapperLoadMore}>
+        {loading && <button className={css.loadMoreBtn}>
+          Loading...
+        </button>} 
       {!loading && hasMore && (
         <button onClick={loadMore} className={css.loadMoreBtn}>
           Load More
         </button>
-      )}
+      )}</div>
     </div>
   );
 }

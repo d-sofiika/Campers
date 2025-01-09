@@ -14,6 +14,7 @@ const Catalog = () => {
       <Header />
       <div className={`container ${css.catalogContainer}`}>
         <Filters onFilter={handleFilterChange} />
+        
         <div className={css.vehicleContainer }>
           {loading && !result.length && <p>Loading data, please wait...</p>}
           {error && (

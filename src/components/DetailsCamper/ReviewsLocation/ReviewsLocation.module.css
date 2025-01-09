@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+
 }
 .coverRating {
   display: flex;
   fill: var(--rating);
   align-items: center;
   gap: 4px;
+  text-decoration: underline;
 }
 .coverLocation {
   display: flex;
