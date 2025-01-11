@@ -1,21 +1,22 @@
-.advantagesContainer{}
-
-.list{
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
-margin-bottom: 24px;
+.advantagesContainer {
 }
-.item{
-display: flex;
-align-items: center;
-gap: 8px;
-border-radius: 100px;
-    padding: 12px 18px;
-background-color: var(--badges);
 
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    color: var(--main);
+.list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: var(--badges);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
 }

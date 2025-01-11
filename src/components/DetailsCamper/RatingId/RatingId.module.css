@@ -1,0 +1,7 @@
+.starIcon{
+fill: var(--gray-light);
+}
+.starWrapper{
+    display: flex;
+    gap:4px ;
+}

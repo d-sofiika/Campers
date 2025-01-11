@@ -7,16 +7,15 @@ import {
   selectLoading,
   selectSelectedItem,
 } from "../../redux/selectors";
-import { createContext, useEffect } from "react";
+import { useEffect } from "react";
 import { fetchCamperById } from "../../redux/slices/camperIdSlice";
 import FormRequest from "../../components/CamperId/FormRequest/FormRequest";
 import CamperDescr from "../../components/CamperId/CamperDescr/CamperDescr";
-
-export const CamperContext = createContext();
+import { CamperContext } from "./CamperContext";
 
 const Camper = () => {
   const { id } = useParams();
-   const location = useLocation();
+  const location = useLocation();
   const dispatch = useDispatch();
   const selectedItem = useSelector(selectSelectedItem);
   const loading = useSelector(selectLoading);
@@ -34,14 +33,16 @@ const Camper = () => {
     <>
       <Header />
       <div className={`container ${css.camperContainer}`}>
-        <CamperDescr  selectedItem={selectedItem} />
+        <CamperDescr selectedItem={selectedItem} />
         <ul className={css.linkList}>
-          <li >
-            <Link className={
-                location.pathname.includes("/features")  ? `${css.linkItem} ${css.activeLink}` : css.linkItem
+          <li>
+            <Link
+              className={
+                location.pathname.includes("/features")
+                  ? `${css.linkItem} ${css.activeLink}`
+                  : css.linkItem
               }
               to="features"
-              
             >
               Features
             </Link>
@@ -49,7 +50,10 @@ const Camper = () => {
           <li>
             <Link
               to="reviews"
-              className={location.pathname.includes("/reviews")  ? `${css.linkItem} ${css.activeLink}` : css.linkItem
+              className={
+                location.pathname.includes("/reviews")
+                  ? `${css.linkItem} ${css.activeLink}`
+                  : css.linkItem
               }
             >
               Reviews
@@ -60,7 +64,8 @@ const Camper = () => {
         <div className={css.wrapperBottom}>
           <CamperContext.Provider value={selectedItem}>
             <Outlet />
-          </CamperContext.Provider> <FormRequest />
+          </CamperContext.Provider>{" "}
+          <FormRequest />
         </div>
       </div>
     </>

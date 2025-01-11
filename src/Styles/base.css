@@ -80,6 +80,9 @@ button {
   border: none;
   background-color: transparent;
 }
+input{
+  border: none;
+}
 
 .container {
 display: flex;
