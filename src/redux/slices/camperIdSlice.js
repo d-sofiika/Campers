@@ -32,11 +32,13 @@ const campersByIdSlice = createSlice({
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.loading = false;
         state.selectedItem = action.payload;
+        console.log('Action payload:', action.payload);
       })
       .addCase(fetchCamperById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
+    
   },
 });
 

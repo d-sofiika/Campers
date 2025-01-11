@@ -38,8 +38,12 @@ margin: 0 auto;
 
 a {
   text-decoration: none;
+  
 }
-
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 ul,
 ol {
   margin: 0;
