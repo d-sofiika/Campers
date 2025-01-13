@@ -1,3 +1,4 @@
+@import "react-day-picker/dist/style.css";
 .formContainer {
   border: 1px solid var(--gray-light);
   border-radius: 10px;
@@ -24,10 +25,20 @@ form {
   gap: 14px;
 }
 .input {
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+  border: none;
   border-radius: 12px;
   padding: 18px 18px;
   height: 60px;
   background-color: var(--inputs);
+}
+
+.error {
+  color: var(--button);
 }
 .btn {
   margin-top: 24px;

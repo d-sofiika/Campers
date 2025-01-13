@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Features from "./CamperId/Features/Features.jsx";
 import Reviews from "./CamperId/Reviews/Reviews.jsx";
 import { ColorRing } from "react-loader-spinner";
@@ -28,6 +28,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/:id" element={<Camper />}>
+            <Route index element={<Navigate to="features" replace />} />
             <Route path="features" element={<Features />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
