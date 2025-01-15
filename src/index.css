@@ -1,2 +1,3 @@
-@import url('../src/Styles/base.css');
+@import url('./Styles/base.css');
 @import 'modern-normalize';
+@import url('./Styles/globalCalendar.css');

@@ -12,6 +12,8 @@ import { fetchCamperById } from "../../redux/slices/camperIdSlice";
 import FormRequest from "../../components/CamperId/FormRequest/FormRequest";
 import CamperDescr from "../../components/CamperId/CamperDescr/CamperDescr";
 import { CamperContext } from "./CamperContext";
+import Loader from "../../components/LoaderAndError/Loader";
+
 
 const Camper = () => {
   const { id } = useParams();
@@ -25,9 +27,17 @@ const Camper = () => {
     dispatch(fetchCamperById(id));
   }, [id, dispatch]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!selectedItem) return <p>Camper not found.</p>;
+  if (loading) {
+    return <Loader/>; 
+  }
+
+  if (error) {
+    return <p>Whoops, something went wrong! Please try reloading this page!</p>; 
+  }
+
+  if (!selectedItem) {
+    return <p>Camper not found.</p>; 
+  }
 
   return (
     <>
@@ -64,7 +74,7 @@ const Camper = () => {
         <div className={css.wrapperBottom}>
           <CamperContext.Provider value={selectedItem}>
             <Outlet />
-          </CamperContext.Provider>{" "}
+          </CamperContext.Provider>
           <FormRequest />
         </div>
       </div>

@@ -1,14 +1,9 @@
-import { DayPicker } from "react-day-picker";
-import "react-day-picker/dist/style.css";
 import css from "./FormRequest.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-
-import { useState } from "react";
+import Calendar from "../../DetailsCamper/Calendar/Calendar";
 
 export default function FormRequest() {
-  const [selectedDate, setSelectedDate] = useState(null); // Для відстеження обраної дати
-
   const FeedbackSchema = Yup.object().shape({
     username: Yup.string()
       .min(2, "Too Short!")
@@ -19,19 +14,22 @@ export default function FormRequest() {
     comment: Yup.string()
       .min(3, "Too short")
       .max(256, "Too long")
-      .required("Required"),
+      .notRequired(),
   });
 
   const initialValues = {
     username: "",
     email: "",
-    date: "",
+    date: null,
     comment: "",
   };
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (values, { resetForm, setFieldValue }) => {
     console.log(values);
-    actions.resetForm();
+    resetForm({
+      values: { ...initialValues, date: null },
+    });
+    setFieldValue("date", null);
   };
 
   return (
@@ -45,7 +43,7 @@ export default function FormRequest() {
         validationSchema={FeedbackSchema}
         onSubmit={handleSubmit}
       >
-        {({ setFieldValue }) => (
+        {({ setFieldValue, values }) => (
           <Form className={css.form}>
             <Field
               className={css.input}
@@ -66,12 +64,15 @@ export default function FormRequest() {
               name="email"
             />
             <ErrorMessage name="email" className={css.error} component="span" />
-           
+            <Calendar
+              selectedDate={values.date}
+              onDateChange={(date) => setFieldValue("date", date)}
+            />
 
             <ErrorMessage name="date" className={css.error} component="span" />
 
             <Field
-              className={css.input}
+              className={`${css.input} ${css.inputComment}`}
               as="textarea"
               rows="5"
               placeholder="Comment"

@@ -1,25 +1,34 @@
-import { useState } from 'react';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
+import { useEffect, useState } from "react";
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/flatpickr.css";
+import css from "./Calendar.module.css";
 
-const MyCalendar = () => {
-  const [selected, setSelected] = useState();
+export default function Calendar({ selectedDate, onDateChange }) {
+  const [date, setDate] = useState(selectedDate);
+
+  useEffect(() => {
+    setDate(selectedDate);
+  }, [selectedDate]);
+
+  const handleDateChange = (selectedDates) => {
+    setDate(selectedDates[0]);
+    onDateChange && onDateChange(selectedDates[0]);
+  };
 
   return (
-    <DayPicker
-      mode="single"
-      selected={selected}
-      onSelect={setSelected}
-      styles={{
-        caption: { color: 'var(--main)', fontSize: '18px', fontWeight: 'bold' },
-        day: { padding: '8px', fontSize: '14px', borderRadius: '50%' },
-        day_selected: { backgroundColor: 'var(--button)', color: '#fff' },
-        day_today: { fontWeight: 'bold', border: '1px solid var(--button)' },
-        nav_button: { color: 'var(--main)' },
-        head_cell: { color: 'var(--gray)', fontSize: '14px' },
-      }}
-    />
+    <div>
+      <Flatpickr
+        value={date}
+        onChange={handleDateChange}
+        options={{
+          dateFormat: "F j, Y",
+          locale: "en",
+          monthSelectorType: "static",
+          disableMobile: true,
+        }}
+        placeholder="Booking date*"
+        className={css.input}
+      />
+    </div>
   );
-};
-
-export default MyCalendar;
+}
