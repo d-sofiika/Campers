@@ -1,5 +1,5 @@
 import ReviewsLocation from "../../DetailsCamper/ReviewsLocation/ReviewsLocation";
-import PhotoGallery from "../../DetailsCamper/PhotoGallery/photoGallery";
+import PhotoGallery from "../../DetailsCamper/PhotoGallery/PhotoGallery.jsx";
 import css from "./CamperDescr.module.css";
 
 export default function CamperDescr({ selectedItem }) {
