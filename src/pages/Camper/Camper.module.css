@@ -6,34 +6,11 @@
   align-items: baseline;
 }
 
-.linkList {
-  display: flex;
-  gap: 40px;
-}
 .hr {
   border: none;
   border-top: 1px solid var(--gray-light);
   width: 100%;
-margin-bottom: 44px;
-}
-.linkItem {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 120%;
-  color: var(--main);
-  padding-bottom: 7px;
-  
-}
-
-.linkItem:hover,
-.linkItem:focus {
-}
-
-.activeLink {
-  border-bottom: 5px solid var(--button);
-z-index: 1999;
-position: relative;
+  margin-bottom: 44px;
 }
 
 .wrapperBottom {

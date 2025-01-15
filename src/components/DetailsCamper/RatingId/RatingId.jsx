@@ -1,4 +1,5 @@
 import css from "./RatingId.module.css"
+
 export default function RatingID({ rating }) {
   const stars = Array.from({ length: 5 }, (_, index) =>
     index < rating ? (
@@ -11,6 +12,5 @@ export default function RatingID({ rating }) {
       </svg>
     )
   );
-
   return <div className={css.starWrapper}>{stars}</div>;
 }

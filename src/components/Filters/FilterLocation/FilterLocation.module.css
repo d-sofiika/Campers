@@ -1,0 +1,31 @@
+.inputContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.inputIcon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    fill: var(--gray);
+}
+
+
+.inputLocation {
+    background-color: var(--inputs);
+    border: none;
+    border-radius: 12px;
+    padding: 18px 48px;
+    width: 360px;
+    height: 56px;
+}
+
+.inputLocation:not(:placeholder-shown)+.inputIcon {
+    fill: var(--main);
+}
+
+.inputLocation::placeholder {
+    color: var(--gray);
+}

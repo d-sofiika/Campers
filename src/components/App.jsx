@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Features from "./CamperId/Features/Features.jsx";
 import Reviews from "./CamperId/Reviews/Reviews.jsx";
-import Loader from "./LoaderAndError/Loader.jsx";
+import Loader from "./Loader/Loader.jsx";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const Catalog = lazy(() => import("../pages/Catalog/Catalog.jsx"));

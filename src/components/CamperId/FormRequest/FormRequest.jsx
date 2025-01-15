@@ -2,6 +2,7 @@ import css from "./FormRequest.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import Calendar from "../../DetailsCamper/Calendar/Calendar";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function FormRequest() {
   const FeedbackSchema = Yup.object().shape({
@@ -26,6 +27,7 @@ export default function FormRequest() {
 
   const handleSubmit = (values, { resetForm, setFieldValue }) => {
     console.log(values);
+    toast.success("The request was sent successfully!");
     resetForm({
       values: { ...initialValues, date: null },
     });
@@ -34,6 +36,7 @@ export default function FormRequest() {
 
   return (
     <div className={css.formContainer}>
+      <ToastContainer />
       <h2 className={css.title}>Book your camper now</h2>
       <p className={css.descr}>
         Stay connected! We are always ready to help you.
@@ -64,11 +67,11 @@ export default function FormRequest() {
               name="email"
             />
             <ErrorMessage name="email" className={css.error} component="span" />
+
             <Calendar
               selectedDate={values.date}
               onDateChange={(date) => setFieldValue("date", date)}
             />
-
             <ErrorMessage name="date" className={css.error} component="span" />
 
             <Field

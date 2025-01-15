@@ -1,43 +1,9 @@
-
-.wrapperLocation {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
-}
-.inputContainer {
-  position: relative;
-  width: 100%;
-  margin-bottom: 40px;
-}
-.inputIcon {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  fill: var(--gray);
-}
 .textLocation {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: var(--gray);
   margin-bottom: 8px;
-}
-.inputLocation {
-  background-color: var(--inputs);
-  border: none;
-  border-radius: 12px;
-  padding: 18px 48px;
-  width: 360px;
-  height: 56px;
-}
-.inputLocation:not(:placeholder-shown) + .inputIcon {
-  fill: var(--main);
-}
-.inputLocation::placeholder {
-  color: var(--gray);
-}
-.wrapperFilters {
 }
 .textFilters {
   font-weight: 500;
@@ -46,17 +12,9 @@
   color: var(--text);
   margin-bottom: 32px;
 }
-.wrapperCheckbox,
-.vehicleTypes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 360px;
-  margin-bottom: 32px;
-}
-.vehicleTypes {
-  margin-bottom: 40px;
-}
+
+
+
 .titleFilters {
   font-weight: 600;
   font-size: 20px;
@@ -67,39 +25,6 @@
   margin-bottom: 24px;
 }
 
-.inactive,
-.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--gray-light);
-  border-radius: 12px;
-  padding: 16px 18px;
-  width: 112px;
-  max-height: 96px;
-  cursor: pointer;
-}
-
-.active,
-.inactive:hover,
-.inactive:focus {
-  border: 1px solid var(--button);
-}
-
-.img {
-  width: 32px;
-  min-height: 32px;
-}
-.imgDescr {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: var(--main);
-}
 
 .btn {
   font-weight: 500;

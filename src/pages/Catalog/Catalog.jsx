@@ -2,7 +2,6 @@ import Filters from "../../components/Filters/Filters";
 import Header from "../../components/Header/Header";
 import VehicleList from "../../components/VehicleList/VehicleList";
 import css from "./Catalog.module.css";
-
 import { useCatalog } from "../../redux/hooks/useCatalog";
 
 const Catalog = () => {
