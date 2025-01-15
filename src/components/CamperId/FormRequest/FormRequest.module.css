@@ -4,6 +4,8 @@
   border-radius: 10px;
   padding: 44px;
   width: 641px;
+
+
 }
 .title {
   font-weight: 600;
@@ -19,7 +21,9 @@
   color: var(--gray);
   margin-bottom: 24px;
 }
-form {
+.form {
+  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -41,20 +45,8 @@ form {
 }
 .error {
   color: var(--button);
+  width: 100%;
 }
 .btn {
-  margin-top: 24px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  color: #fff;
-  width: 166px;
-  border-radius: 200px;
-  padding: 16px 60px;
-  background-color: var(--button);
-}
-.btn:hover,
-.btn:focus {
-  background-color: var(--button-hover);
+  max-width: 166px;
 }

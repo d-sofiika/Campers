@@ -9,9 +9,9 @@ const Catalog = () => {
     useCatalog();
 
   return (
-    <div>
+    <div className="container">
       <Header />
-      <div className={`container ${css.catalogContainer}`}>
+      <div className={css.catalogContainer}>
         <Filters onFilter={handleFilterChange} />
         
         <div className={css.vehicleContainer }>

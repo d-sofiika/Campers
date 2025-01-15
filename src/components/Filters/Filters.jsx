@@ -33,6 +33,7 @@ export default function Filters({ onFilter }) {
   };
 
   return (
+  
     <form onSubmit={handleSubmit}>
       <p className={css.textLocation}>Location</p>
       <FilterLocation location={location} setLocation={setLocation} />
@@ -51,7 +52,7 @@ export default function Filters({ onFilter }) {
         <FilterVehicle form={form} setForm={setForm} />
       </div>
 
-      <button className={css.btn} type="submit">
+      <button className="buttonBase"  type="submit">
         Search
       </button>
     </form>

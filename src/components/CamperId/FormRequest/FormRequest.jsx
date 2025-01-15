@@ -87,7 +87,7 @@ export default function FormRequest() {
               component="span"
             />
 
-            <button className={css.btn} type="submit">
+            <button className={`buttonBase ${css.btn}`} type="submit">
               Send
             </button>
           </Form>

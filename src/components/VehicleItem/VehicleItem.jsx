@@ -26,7 +26,7 @@ export default function VehicleItem({ detail }) {
       <Advantages data={detail} />
 
       <button
-        className={css.btn}
+        className="buttonBase" 
         type="button"
         onClick={handleButtonClick}
       >

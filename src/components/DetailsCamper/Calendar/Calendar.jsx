@@ -16,7 +16,7 @@ export default function Calendar({ selectedDate, onDateChange }) {
   };
 
   return (
-    <div>
+    
       <Flatpickr
         value={date}
         onChange={handleDateChange}
@@ -29,6 +29,6 @@ export default function Calendar({ selectedDate, onDateChange }) {
         placeholder="Booking date*"
         className={css.input}
       />
-    </div>
+ 
   );
 }

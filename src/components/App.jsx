@@ -11,11 +11,7 @@ const Camper = lazy(() => import("../pages/Camper/Camper.jsx"));
 function App() {
   return (
     <>
-      <Suspense
-        fallback={
-          <Loader/>
-        }
-      >
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<Catalog />} />

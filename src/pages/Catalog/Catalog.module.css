@@ -13,3 +13,6 @@
   align-items: center;
   justify-content: center;
 }
+.wrapper{
+  max-width: 100%;
+}
