@@ -1,10 +1,20 @@
+header {
+  position: relative;
+  z-index: 10;
+}
+
 .heroContainer {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
   background-image: url("../../img/camper-background-2x.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
   display: flex;
-    align-items: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
 }
 .wrapper {
   color: var(--inputs);
