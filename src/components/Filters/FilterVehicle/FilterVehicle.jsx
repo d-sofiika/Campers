@@ -10,7 +10,7 @@ export default function FilterVehicle({ form, setForm }) {
               onClick={() => setForm("panelTruck")}
             >
               <svg className={css.img}>
-                <use href="/src/img/sprite.svg#icon-bi_grid-1x2" />
+                <use href="/sprite.svg#icon-bi_grid-1x2" />
               </svg>
               <p className={css.imgDescr}>Van</p>
             </div>
@@ -21,7 +21,7 @@ export default function FilterVehicle({ form, setForm }) {
               onClick={() => setForm("Fully Integrated")}
             >
               <svg className={css.img}>
-                <use href="/src/img/sprite.svg#icon-bi_grid" />
+                <use href="/sprite.svg#icon-bi_grid" />
               </svg>
               <p className={css.imgDescr}>Fully Integrated</p>
             </div>
@@ -30,7 +30,7 @@ export default function FilterVehicle({ form, setForm }) {
               onClick={() => setForm("Alcove")}
             >
               <svg className={css.img}>
-                <use href="/src/img/sprite.svg#icon-bi_grid-3x3" />
+                <use href="/sprite.svg#icon-bi_grid-3x3" />
               </svg>
               <p className={css.imgDescr}>Alcove</p>
             </div>

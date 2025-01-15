@@ -24,7 +24,7 @@ export default function Advantages({ data }) {
               return (
                 <li key={key} className={css.item}>
                   <svg width="16" height="16">
-                    <use href={`/src/img/sprite.svg#${advantage.icon}`}></use>
+                    <use href={`/sprite.svg#${advantage.icon}`}></use>
                   </svg>
                   <span>
                     {typeof value === "boolean"

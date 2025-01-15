@@ -12,7 +12,7 @@ export default function FilterEquipment({
         className={features.AC ? css.active : css.inactive}
         onClick={() => setFeatures({ ...features, AC: !features.AC })}>
         <svg className={css.img}>
-          <use href="/src/img/sprite.svg#icon-wind"></use>
+          <use href="/sprite.svg#icon-wind"></use>
         </svg>
         <p className={css.imgDescr}>AC</p>
       </div>
@@ -21,7 +21,7 @@ export default function FilterEquipment({
         className={transmission === "automatic" ? css.active : css.inactive}
         onClick={() => setTransmission("automatic")}>
         <svg className={css.img}>
-          <use href="/src/img/sprite.svg#icon-diagram"></use>
+          <use href="/sprite.svg#icon-diagram"></use>
         </svg>
         <p className={css.imgDescr}>Automatic</p>
       </div>
@@ -30,7 +30,7 @@ export default function FilterEquipment({
         className={features.kitchen ? css.active : css.inactive}
         onClick={() => setFeatures({ ...features, kitchen: !features.kitchen })}>
         <svg className={css.img}>
-          <use href="/src/img/sprite.svg#icon-cup-hot"></use>
+          <use href="/sprite.svg#icon-cup-hot"></use>
         </svg>
         <p className={css.imgDescr}>Kitchen</p>
       </div>
@@ -39,7 +39,7 @@ export default function FilterEquipment({
         className={features.TV ? css.active : css.inactive}
         onClick={() => setFeatures({ ...features, TV: !features.TV })}>
         <svg className={css.img}>
-          <use href="/src/img/sprite.svg#icon-tv"></use>
+          <use href="/sprite.svg#icon-tv"></use>
         </svg>
         <p className={css.imgDescr}>TV</p>
       </div>
@@ -50,7 +50,7 @@ export default function FilterEquipment({
           setFeatures({ ...features, bathroom: !features.bathroom })
         }>
         <svg className={css.img}>
-          <use href="/src/img/sprite.svg#icon-shower"></use>
+          <use href="/sprite.svg#icon-shower"></use>
         </svg>
         <p className={css.imgDescr}>Bathroom</p>
       </div>

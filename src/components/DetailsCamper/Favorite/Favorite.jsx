@@ -19,7 +19,7 @@ export default function Favorite({ camperId }) {
       onClick={handleToggle}
     >
       <svg width="26" height="24" className={css.heartIcon}>
-        <use href="/src/img/sprite.svg#icon-heart"></use>
+        <use href="/sprite.svg#icon-heart"></use>
       </svg>
     </button>
   );

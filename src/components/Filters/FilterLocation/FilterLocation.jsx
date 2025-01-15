@@ -11,7 +11,7 @@ export default function FilterLocation({ setLocation, location}) {
             onChange={(e) => setLocation(e.target.value)}
           />
           <svg width="20" height="20" className={css.inputIcon}>
-            <use href="/src/img/sprite.svg#icon-map"></use>
+            <use href="/sprite.svg#icon-map"></use>
           </svg>
         </div>);
 }
