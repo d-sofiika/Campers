@@ -1,5 +1,6 @@
 **TravelTrucks** — a web application for a company specializing in camper rentals. Users can view available campers, filter them based on various criteria, and also book them by filling out a form on each camper's page.
 
+Project layout - https://www.figma.com/design/6vTbzaB3EPgOreQz2jOJJe/Campers?node-id=0-1&p=f&t=8V0QmoBQ0h4i8GUh-0
 ## Brief Description
 
 The project consists of a frontend part implemented in React using Redux for state management and React Router for routing. Users can view the list of available campers, apply filters for search, and also view the details of each camper.
